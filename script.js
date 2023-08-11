@@ -65,7 +65,7 @@ function fatorial()
         {
             resultado *= i;
         }
-        alert(resultado);
+        alert("fatorial do número digitado é = "+resultado);
     }
     
 } 
