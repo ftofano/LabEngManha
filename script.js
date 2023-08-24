@@ -2,7 +2,7 @@ function tipo_dado() {
 
     let entrada = prompt("Digte alguma coisa .");
 
-
+    if (!typeof entrada == "undefined")
         if (isNaN(entrada)) {
             alert("Variavel do tipo string");
         }
@@ -10,11 +10,13 @@ function tipo_dado() {
             alert("variável do tipo number");
 
         }
-
+    else {
+        alert("Tente novamente... Tchau Obrigado");
+    }
 }
 function primo() {
     let numero = parseInt(prompt("Digite um número: "));
-    if (!entrada) {
+    if (typeof entrada == "undefined") {
         alert("Algo não está certo...")
     }
     else {
@@ -98,7 +100,3 @@ function atualizarLista() {
             }
           
 }
-
-
-
-
