@@ -2,7 +2,7 @@ function tipo_dado() {
 
     let entrada = prompt("Digte alguma coisa .");
 
-    if (!entrada){
+    if (entrada == ""){
         if (isNaN(entrada)) {
             alert("Variavel do tipo string");
         }
