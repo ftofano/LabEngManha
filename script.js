@@ -16,7 +16,7 @@ function tipo_dado() {
 }
 function primo() {
     let numero = parseInt(prompt("Digite um número: "));
-    if (typeof entrada == "undefined") {
+    if (typeof entrada == "") {
         alert("Algo não está certo...")
     }
     else {
