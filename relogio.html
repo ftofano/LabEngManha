@@ -5,9 +5,9 @@
   <title>Relógio</title>
   <style>
     .relogio {
-      border: 1px solid black;
-      width: 200px;
-      height: 200px;
+      
+      width: 100px;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -34,23 +34,13 @@
     // Declara a variável divRelogio
     let divRelogio;
 
-    // Obtém o horário atual
-    const agora = new Date();
-
-    // Formata o horário
-    const h = agora.getHours();
-    const m = agora.getMinutes();
-    const s = agora.getSeconds();
-
-    // Cria um elemento div com a classe relógio
-    divRelogio = document.createElement('div');
-    divRelogio.classList.add('relogio');
-
-    // Exibe o horário na div
-    divRelogio.innerHTML = h + ':' + m + ':' + s;
-
-    // Cria um temporizador que executará a função updateTime() a cada segundo
-    const tempo = setInterval(updateTime, 1000);
+    // Função para criar o relógio e adicioná-lo ao documento
+    function criarRelogio() {
+      // Cria um elemento div com a classe relógio
+      divRelogio = document.createElement('div');
+      divRelogio.classList.add('relogio');
+      document.body.appendChild(divRelogio);
+    }
 
     // Função que atualiza o horário
     function updateTime() {
@@ -58,13 +48,20 @@
       const agora = new Date();
 
       // Formata o horário
-      h = agora.getHours();
-      m = agora.getMinutes();
-      s = agora.getSeconds();
+      const h = agora.getHours();
+      const m = agora.getMinutes();
+      const s = agora.getSeconds();
 
       // Exibe o horário na div
       divRelogio.innerHTML = h + ':' + m + ':' + s;
     }
+
+    // Chama a função criarRelogio para criar o relógio inicialmente
+    criarRelogio();
+
+    // Cria um temporizador que executará a função updateTime() a cada segundo
+    const tempo = setInterval(updateTime, 1000);
   </script>
+  <a href="index.html">Voltar</a>
 </body>
 </html>
