@@ -100,3 +100,38 @@ function atualizarLista() {
             }
           
 }
+
+function mostrarData(){
+
+    // Cria o objeto Data
+    const agora = new Date();
+
+    // Obtém o dia da semana
+    const diaSemana = agora.getDay(); 
+
+    // Obtém o mês
+    const mes = agora.getMonth() + 1;
+
+    // Obtém o dia do mês
+    const dia = agora.getDate();
+
+    // Obtém o ano 
+    const ano = agora.getFullYear();
+
+    // Obtém os dias da semana por extenso
+    const diasDaSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+
+    // Formata a data
+    const dataFormatada = `${diasDaSemana[diaSemana]} ${dia} de ${mes} de ${ano}`;
+
+    // Alerta a data
+    alert(dataFormatada);
+
+
+}
+
+
+
+
+
+
