@@ -31,41 +31,39 @@
   </div>
 
   <script lang="JavaScript" type="application/javascript">
-    import * as Data from 'date-fns';
-    // Importa o objeto Date
-    const Data = require('date-fns');
+    // Declara a variável divRelogio
+    let divRelogio;
 
     // Obtém o horário atual
-    const agora = Data.now();
+    const agora = new Date();
 
     // Formata o horário
-    const h = Data.format(agora, 'HH');
-    const m = Data.format(agora, 'mm');
-    const s = Data.format(agora, 'ss');
+    const h = agora.getHours();
+    const m = agora.getMinutes();
+    const s = agora.getSeconds();
+
+    // Cria um elemento div com a classe relógio
+    divRelogio = document.createElement('div');
+    divRelogio.classList.add('relogio');
 
     // Exibe o horário na div
-    const divRelogio = document.querySelector('.relogio');
-    divRelogio.querySelector('.horas').innerHTML = h;
-    divRelogio.querySelector('.minutos').innerHTML = m;
-    divRelogio.querySelector('.segundos').innerHTML = s;
+    divRelogio.innerHTML = h + ':' + m + ':' + s;
 
-    // Cria um temporizador que executará a função `updateTime()` a cada segundo
+    // Cria um temporizador que executará a função updateTime() a cada segundo
     const tempo = setInterval(updateTime, 1000);
 
     // Função que atualiza o horário
     function updateTime() {
       // Obtém o horário atual
-      const agora = Data.now();
+      const agora = new Date();
 
       // Formata o horário
-      h = Data.format(agora, 'HH');
-      m = Data.format(agora, 'mm');
-      s = Data.format(agora, 'ss');
+      h = agora.getHours();
+      m = agora.getMinutes();
+      s = agora.getSeconds();
 
       // Exibe o horário na div
-      divRelogio.querySelector('.horas').innerHTML = h;
-      divRelogio.querySelector('.minutos').innerHTML = m;
-      divRelogio.querySelector('.segundos').innerHTML = s;
+      divRelogio.innerHTML = h + ':' + m + ':' + s;
     }
   </script>
 </body>
