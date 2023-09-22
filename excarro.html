@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="carro.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+    
+</head>
+<body>
+    <span>
+        <form id="CarForm" class="car-form">
+            <h2>Cadastrar carro:</h2>
+            <div class="placa">                    
+                <label>Placa:</label>
+                <input type="text" id="placa" name="placa" placeholder="Digite a Placa" />
+            </div>
+            <div class='marca'>
+                <label>Marca</label>
+                <input type="text" id="marca" name="marca" placeholder="Marca do veiculo." required>
+            </div>
+
+            <div class="modelo">
+                <div>
+                    <label for="modelo">Modelo:</label><br>
+                    <input type="text" id="modelo" name="modelo"  placeholder="Modelo" required/><br>
+                </div>
+                
+                <div>
+                    <label for="ano">Ano:</label><br>
+                    <input type="text" id="ano" name="ano" /><br>
+                </div>
+            </div>
+    
+            <div>
+                <label for="cor">Cor:</label><br>
+                <input type="text" id="cor" name="cor" placeholder="Digite a cor do carro" /><br><br>
+            </div>
+    
+            <div class="Km" id="km">
+                <div>
+                    <label for="km">Km rodado:</label><br>
+                    <input type="text" id="km_rodado" name="km_rodado" placeholder="Quilometros rodados" />
+                </div>
+                <div>
+                    <label for="tabfipe">Valor tabela Fipe:</label><br>
+                    <input type="text" id="valor_fipe" name="valor_fipe" placeholder="Valor tabela Fipe" />
+                </div>
+            </div>
+            <div>
+                <input type="submit" class="bot"  value=">>Gravar<<">
+            </div>
+        </form>
+        <p></p>
+        <form class="car-form">
+            <h2>Pesquisar carro:</h2>
+            <label>Placa:</label>
+            <input type="text" id="placa_pesquisa">
+            <button type="button" class="bot" id="search-button">Procurar</button>
+            <div id="resultadoPesquisa">
+                <!-- Aqui é onde os resultados da pesquisa serão exibidos -->
+            </div>
+        </form>
+    </span>
+</body>
+</html>

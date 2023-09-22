@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 1em;
+}
+
+form {
+    width: 40em;
+    margin: 0 auto;
+    border: solid 1px #f50e0e;
+    border-radius: 15px;
+    box-shadow: 1px 3px 3px  #e95151;
+    padding: 1em;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type=text]{
+    width: 97%!important;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 10px;
+    border: solid 1px #e95151;
+}
+
+input[type=date]{
+    width: 80%!important;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #e95151;
+}
+
+input[type=date]:hover{
+    background-color:  #9b8585;
+}
+
+input[type=email]
+{
+    width: 97%!important;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 10px;
+    border: solid 1px #e95151;
+}
+
+#datanasc {
+    display: flexbox;
+    padding-top: 3px;
+    
+}
+
+.foneArea{
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#foneFixo, #foneCelular {
+    width: 230px;
+}
+
+input[type=text]{
+    width: 100%;
+}
+
+input[type=text]:hover{
+    background-color:#9b8585;
+}
+
+#prof, #al {
+    display: none;
+}
+
+.botoes{
+    display: flex;
+    width: 40em;
+    padding-top: 30px;    
+    margin: 3 auto;
+    justify-content:space-around
+}
+
+.bot {
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: solid 1px #e95151;
+}
+
+.bot:hover{
+    background-color:  #9b8585;
+}
+
+.radioOP {
+    padding-top: 15px;
+    font-size: 20px;
+    
+}
+
+.result{
+    width: 40em;
+    padding-top: 30px;
+    margin: 0 auto;
+}

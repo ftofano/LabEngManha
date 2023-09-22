@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="javascript" src="pessoa.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Document</title>
+</head>
+<body>
+    <span>
+
+        <form id="cadForm">
+
+            <div id="nome" class='nome'>
+                <label>Nome</label>
+                <input type="text">
+            </div>
+
+            <div class="email">
+                <div>
+                    <label for="email">Digite o e-mail</label><br>
+                    <input type="text" id="email" name="email"  placeholder="nome@email" required/><br>
+                </div>
+                
+                <div id="nasc">
+                    <label for="datanasc">Data de Nascimento</label><br>
+                    <input type="date" id="data_nascimento" name="data_nascimento" /><br>
+                </div>
+            </div>
+    
+            <div>
+                <label for="matricula">Matrícula</label><br>
+                <input type="text" id="matricula" name="matricula" placeholder="Digite a matrícula" /><br><br>
+            </div>
+    
+            <div class="foneArea" id="foneArea">
+                <div>
+                    <label for="foneFixo">Telefone Fixo</label><br>
+                    <input type="text" id="foneFixo" name="foneFixo" placeholder="18 99999-9999" />
+                </div>
+                <div>
+                    <label for="foneCelular">Telefone Celular</label><br>
+                <input type="text" id="foneCelular" name="foneCelular" placeholder="18 99999-9999" />
+                </div>
+                <div class="radioOP">
+                    <input type="radio" id="Professor" name="user" value="Professor" onclick="showDiv(this)" />
+                    <label for="Professor">Professor</label><br>
+                    <input type="radio" id="Aluno" name="user" value="Aluno" onclick="showDiv(this)" />
+                    <label for="Aluno">Aluno</label>
+                </div>
+                <div>
+    
+                </div>
+    
+            </div>
+            
+            <div id="prof">
+                <div class="">
+                    <label for="area_atuacao">Área</label><br>
+                    <input type="text" id="area_atuacao" name="area_atuacao" placeholder="Digite a área de atuação" /><br>
+                </div>
+                <div class="">
+                    <label for="link_lattes">Lattes</label><br>
+                    <input type="text" id="link_lattes" name="link_lattes" placeholder="Digite a url completa de seu Lattes" /><br>
+                </div>
+            </div>
+            
+            <div id="al">
+                <div class="">
+                    <label for="curso">Curso</label><br>
+                    <input type="text" id="curso" name="curso" placeholder="Digite seu curso" /><br>
+                </div>
+            </div>
+            <div class="botoes">
+                <input class="bot" type="submit" value="Enviar dados">
+                <input class="bot"  type="reset" value="Limpar dados">
+            </div>
+
+        </form>
+
+    </span>
+    
+</body>
+</html>
+
+function Pessoa(){
+
+    var nome;
+
+    this.setnome = function (pNome){
+        this.Nome = pNome;
+    }
+    this.getNome = function (){
+        return this.nome;    
+    }
+
+    var fonefixo;
+
+    this.setFoneFixo = function (pFoneFixo){
+        this.FoneFixo = pFoneFixo;
+    }
+    this.getFoneFixo = function (){
+        return this.FoneFixo;
+    }
+
+    var fonecelular;
+
+    this.setFoneCelular = function (pFoneCelular){
+        this.FoneCelular = pFoneCelular;
+    }
+    this.getFoneCelular = function (){
+        return this.FoneCelular;
+    }       
+
+    var email;
+
+    this.setEmail = function (pEmail){
+        this.Email = pEmail;
+    }
+    this.getEmail = function(){
+        return this.email;
+    }
+
+    var datanasc;
+
+    this.setDataNasc = function (pDataNasc){
+        this.DataNasc = pDataNasc;
+    }
+    this.getDataNasc = function(){
+        return this.datanasc;
+    }
+
+    var matricula;
+
+    this.setMatricula = function(pMatricula){
+        this.Matriculo = pMatricula;
+    }
+    this.getMatricula = function (){
+        return matricula
+    }
+}
+
+function Aluno(){
+
+    var curso;
+
+    this.setCurso = function (aCurso){
+        this.Curso = aCurso;
+    }
+    this.getCurso = function (){
+        return curso;
+    }
+
+    
+
+}
+
+function Professor(){
+
+    var areaatuacao;
+
+    this.setAreaAtuacao = function (pAreaAtuacao){
+        this.AreaAtuacao = pAreaAtuacao;
+    }
+    this.getAreaAtuacao = function (){
+        return areaatuacao;
+    }
+
+    var linklates;
+
+    this.setLinklates = function(pLinkLates){
+        this.LinkLates = pLinkLates;
+    }
+    this.getLinkLates = function (){
+        return linklates;
+    }
+
+
+
+}
+// Código que cria instâncias de Aluno e Professor e exibe informações
+document.addEventListener("DOMContentLoaded", function () {
+    const meuForm = document.getElementById("cadForm");
+  
+    meuForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita a recarga da página
+  
+      // Obtenha os valores dos campos do formulário
+      const nome = document.getElementById("nome").value;     
+      const email = document.getElementById("email").value;
+      const datanasc = document.getElementById("datnasc").value;
+      const matricula = document.getElementById("matricula").value;
+  
+      const curso = document.getElementById("curso").value;
+      const area_atuacao = document.getElementById("area_atuacao").value;
+      const link_lattes = document.getElementById("link_lattes").value;
+  
+      if (curso) {
+        const aluno = new Aluno(nome, sobrenome, email, datanasc, matricula, curso);
+        mostrarInformacoes(aluno);
+      } else {
+        const professor = new Professor(nome, sobrenome, email, datanasc, matricula, area_atuacao, link_lattes);
+        mostrarInformacoes(professor);
+      }
+  
+      function mostrarInformacoes(objeto) {
+        // Exiba as informações na página
+        const resultado = document.getElementById("output");
+        resultado.innerHTML = `<p>Nome Completo: ${objeto.nomeCompleto()}</p><p>Email: ${objeto.email}</p>`;
+    
+        // Verifique se é Aluno ou Professor
+        if (objeto instanceof Aluno) {
+          resultado.innerHTML += `<p>Curso: ${objeto.curso}</p><p>Matricula: ${objeto.matricula}</p>`;
+        } else if (objeto instanceof Professor) {
+          resultado.innerHTML += `<p>Matricula: ${objeto.matricula}</p><p>Área de Atuação: ${objeto.area_atuacao}</p><p>Link Lattes: ${objeto.link_lattes}</p>`;
+        }
+      }
+    });
+  });
+  
+  
+  
+  function showDiv(elem) {
+    document.getElementById('prof').style.display = elem.value === "Professor" ? "block" : "none";
+    document.getElementById('al').style.display = elem.value === "Aluno" ? "block" : "none";
+  }
+  body {
+    margin: 0;
+    padding: 1em;
+}
+
+form {
+    width: 40em;
+    margin: 0 auto;
+    border: solid 1px #cecece;
+    border-radius: 15px;
+    box-shadow: 15px 10px 10px rgb(95, 95, 95);
+    padding: 1em;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3em;
+    border-bottom: solid 8px #000;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type=text]{
+    width: 97%!important;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 10px;
+    border: solid 1px #3a3939;
+}
+
+input[type=date]{
+    width: 80%!important;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #3a3939;
+}
+input[type=date]:hover{
+    background-color: rgb(231, 241, 213);
+}
+input[type=email]
+{
+    width: 97%!important;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 10px;
+    border: solid 1px #3a3939;
+}
+
+
+
+#datanasc {
+    display: flexbox;
+    padding-top: 3px;
+    
+}
+
+.foneArea{
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#foneFixo, #foneCelular {
+    width: 230px;
+}
+input[type=text]{
+    width: 100%;
+}
+
+input[type=text]:hover{
+    background-color: rgb(231, 241, 213);
+}
+
+#prof, #al {
+    display: none;
+}
+
+.botoes{
+    display: flex;
+    width: 40em;
+    padding-top: 30px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.bot {
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: solid 1px rgba(182, 212, 182, 0.884);
+}
+
+.bot:hover{
+    background-color: rgb(221, 241, 184);
+}
+
+.radioOP {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.result{
+    width: 40em;
+    padding-top: 30px;
+    margin: 0 auto;
+}
