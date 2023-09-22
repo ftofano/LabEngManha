@@ -37,15 +37,12 @@ class Carro {
             if (placa == vet_car[i].placa) {
                 
                 if(vet_car[i].km < 30000 ){
-                    alert("if 1");
                     return vet_car[i].valor_fipe * 1.1;
                 }
                 else if(vet_car[i].km > 30000  && vet_car[i].km <=50000  ){
-                    alert("if 2");
                     return vet_car[i].valor_fipe;
                 }
                 else if(vet_car[i].km > 50000){
-                    alert("if 3");
                     return vet_car[i].valor_fipe / 1.1;
                 }                              
             }
